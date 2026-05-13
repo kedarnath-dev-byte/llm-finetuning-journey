@@ -1,0 +1,46 @@
+IMDb Dataset Visualization and Analysis
+================================================================================
+
+Dataset used: imdb
+Split used: train
+Subset size: 1000 examples
+Shuffle seed: 42
+
+Label distribution:
+- negative: 512
+- positive: 488
+
+Word count statistics:
+- Average word count: 231.55
+- Minimum word count: 31
+- Maximum word count: 1005
+
+Top 20 common words:
+- you: 1323
+- not: 1255
+- his: 1120
+- one: 1094
+- all: 945
+- they: 904
+- who: 871
+- like: 812
+- her: 769
+- there: 762
+- about: 726
+- just: 714
+- out: 679
+- what: 658
+- good: 622
+- more: 615
+- some: 615
+- when: 603
+- can: 589
+- she: 586
+
+Generated chart files:
+- outputs\imdb_label_distribution.png
+- outputs\imdb_word_count_distribution.png
+- outputs\imdb_top_common_words.png
+
+Interview explanation:
+I performed exploratory data analysis on the IMDb dataset before tokenization and fine-tuning. I checked label distribution, review length distribution, and frequent words to understand dataset balance, sequence length behavior, and basic text patterns. This is important because data quality directly impacts fine-tuning performance.

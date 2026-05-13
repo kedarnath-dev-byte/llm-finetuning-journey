@@ -1,0 +1,42 @@
+================================================================================
+Embeddings and Cosine Similarity
+================================================================================
+
+Sentences used:
+Sentence 1: Hugging Face helps developers build AI applications.
+Sentence 2: Hugging Face provides tools for machine learning developers.
+Sentence 3: The farmer is checking crop disease in the field.
+
+Loading tokenizer and AutoModel: bert-base-uncased
+
+Generating BERT AutoModel embeddings using mean pooling...
+Embedding 1 shape: (1, 768)
+Embedding 2 shape: (1, 768)
+Embedding 3 shape: (1, 768)
+
+Cosine similarity using BERT AutoModel + mean pooling:
+Similarity(sentence_1, sentence_2): 0.8539
+Similarity(sentence_1, sentence_3): 0.5018
+
+Interpretation:
+Sentence 1 and Sentence 2 are both about Hugging Face/AI tools, so their similarity should be higher.
+Sentence 3 is about agriculture, so it should be less similar to Sentence 1.
+
+--------------------------------------------------------------------------------
+SentenceTransformer Embeddings
+--------------------------------------------------------------------------------
+
+Loading SentenceTransformer model: sentence-transformers/all-MiniLM-L6-v2
+SentenceTransformer embeddings shape: (3, 384)
+
+Cosine similarity using SentenceTransformer:
+Similarity(sentence_1, sentence_2): 0.8332
+Similarity(sentence_1, sentence_3): -0.0740
+
+Production learning:
+AutoModel gives token-level hidden states and requires pooling to create sentence embeddings.
+SentenceTransformer is easier for semantic similarity because it is trained specifically for sentence embeddings.
+These embeddings are useful for RAG, semantic search, recommendations, clustering, and document similarity.
+
+Embeddings and similarity practical completed successfully.
+Output saved to: outputs\embeddings_and_similarity_output.txt

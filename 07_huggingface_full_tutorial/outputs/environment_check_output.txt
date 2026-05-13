@@ -1,0 +1,29 @@
+Hugging Face Environment Check - Output
+
+Python version:
+3.12.10
+
+Installed packages verified:
+- torch: installed
+- transformers: installed
+- datasets: installed
+- evaluate: installed
+- huggingface_hub: installed
+- sentence-transformers: installed
+- sklearn: installed
+- pandas: installed
+- matplotlib: installed
+
+PyTorch check:
+- PyTorch version: 2.11.0+cpu
+- CUDA available: False
+
+Interpretation:
+This local environment is CPU-based.
+It is suitable for Hugging Face basics, dataset loading, preprocessing, tokenization, embeddings, pipelines, evaluation, and Hub API practice.
+For large-scale fine-tuning, LoRA, QLoRA, or LLM training, GPU-based environments like Google Colab, Kaggle GPU, or cloud GPU should be used.
+
+Interview explanation:
+Before starting Hugging Face implementation, I validated my local environment using a custom Python script.
+I confirmed the availability of the core Hugging Face and ML libraries and checked whether GPU acceleration was available.
+This helped me separate lightweight local experimentation from GPU-heavy fine-tuning workflows.

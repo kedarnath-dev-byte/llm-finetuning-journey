@@ -1,0 +1,64 @@
+================================================================================
+Hugging Face Pipeline API
+================================================================================
+
+================================================================================
+1. Sentiment Analysis Pipeline
+================================================================================
+
+Text: I love learning Hugging Face because it makes AI development easier.
+Result: {'label': 'POSITIVE', 'score': 0.9985474944114685}
+
+Text: This model is slow and the output is disappointing.
+Result: {'label': 'NEGATIVE', 'score': 0.9998002648353577}
+
+Meaning:
+The sentiment pipeline classifies text as POSITIVE or NEGATIVE.
+
+================================================================================
+2. Zero-Shot Classification Pipeline
+================================================================================
+
+Text: This tutorial explains tokenization, embeddings, and transformer models.
+Candidate labels: ['education', 'politics', 'business', 'agriculture']
+Result labels: ['education', 'business', 'agriculture', 'politics']
+Scores: [0.5197, 0.3536, 0.0702, 0.0565]
+
+Meaning:
+Zero-shot classification predicts labels even without task-specific fine-tuning.
+
+================================================================================
+3. Text Generation Pipeline
+================================================================================
+
+Prompt: Hugging Face is useful for
+Generated text: Hugging Face is useful for a lot of reasons. First, it's a great way to get a quick look at the character's face. Second,
+
+Meaning:
+Text-generation pipeline uses next-token prediction to continue the prompt.
+
+================================================================================
+4. Summarization Pipeline
+================================================================================
+
+Summarization pipeline skipped due to environment/version issue:
+"Unknown task summarization, available tasks are ['any-to-any', 'audio-classification', 'automatic-speech-recognition', 'depth-estimation', 'document-question-answering', 'feature-extraction', 'fill-mask', 'image-classification', 'image-feature-extraction', 'image-segmentation', 'image-text-to-text', 'keypoint-matching', 'mask-generation', 'ner', 'object-detection', 'sentiment-analysis', 'table-question-answering', 'text-classification', 'text-generation', 'text-to-audio', 'text-to-speech', 'token-classification', 'video-classification', 'zero-shot-audio-classification', 'zero-shot-classification', 'zero-shot-image-classification', 'zero-shot-object-detection']"
+
+================================================================================
+5. Question Answering Pipeline
+================================================================================
+
+Question-answering pipeline skipped due to environment/version issue:
+"Unknown task question-answering, available tasks are ['any-to-any', 'audio-classification', 'automatic-speech-recognition', 'depth-estimation', 'document-question-answering', 'feature-extraction', 'fill-mask', 'image-classification', 'image-feature-extraction', 'image-segmentation', 'image-text-to-text', 'keypoint-matching', 'mask-generation', 'ner', 'object-detection', 'sentiment-analysis', 'table-question-answering', 'text-classification', 'text-generation', 'text-to-audio', 'text-to-speech', 'token-classification', 'video-classification', 'zero-shot-audio-classification', 'zero-shot-classification', 'zero-shot-image-classification', 'zero-shot-object-detection']"
+
+================================================================================
+Summary
+================================================================================
+
+Pipeline API is useful for rapid prototyping.
+It hides tokenizer/model boilerplate and gives quick inference outputs.
+For production or fine-tuning, we may move from pipeline to AutoModel, Trainer, or custom inference code.
+If a pipeline task is unsupported in the installed Transformers version, handle it gracefully and document the issue.
+
+Pipeline API practical completed successfully.
+Output saved to: outputs\hf_pipeline_api_output.txt

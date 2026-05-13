@@ -1,0 +1,76 @@
+================================================================================
+Hugging Face AutoModel Classes and Task-Specific Heads
+================================================================================
+
+================================================================================
+1. AutoModel: Base Transformer Model
+================================================================================
+Model used: bert-base-uncased
+Input text: Hugging Face AutoModel gives hidden states.
+Output type: <class 'transformers.modeling_outputs.BaseModelOutputWithPoolingAndCrossAttentions'>
+last_hidden_state shape: (1, 11, 768)
+
+Meaning:
+AutoModel gives token-level hidden states. It does not directly classify or generate text.
+
+================================================================================
+2. AutoModelForSequenceClassification: Classification Head
+================================================================================
+Model used: distilbert-base-uncased-finetuned-sst-2-english
+Input text: I really enjoyed learning Hugging Face today.
+Logits: [[-4.144487380981445, 4.434780597686768]]
+Probabilities: [[0.00018792728951666504, 0.9998120665550232]]
+Predicted class id: 1
+Predicted label: POSITIVE
+
+Meaning:
+AutoModelForSequenceClassification adds a classification head on top of the transformer.
+
+================================================================================
+3. AutoModelForCausalLM: Text Generation Head
+================================================================================
+Model used: gpt2
+Prompt: Hugging Face is useful for
+Generated text: Hugging Face is useful for a lot of reasons. First, it's a great way to get a quick look at the character
+
+Meaning:
+AutoModelForCausalLM is used for decoder-style next-token prediction and text generation.
+
+================================================================================
+4. AutoConfig: Model Architecture Configuration
+================================================================================
+Model used: bert-base-uncased
+Model type: bert
+Hidden size: 768
+Number of hidden layers: 12
+Number of attention heads: 12
+Vocabulary size: 30522
+
+Changing num_labels in config for a custom classification task...
+Updated num_labels: 5
+
+Meaning:
+AutoConfig helps inspect and modify model architecture settings before loading or fine-tuning.
+
+================================================================================
+Summary
+================================================================================
+
+AutoModel:
+Base transformer model. Useful for embeddings and hidden states.
+
+AutoModelForSequenceClassification:
+Base model plus classification head. Useful for sentiment, topic, spam, intent classification.
+
+AutoModelForCausalLM:
+Decoder-style language model head. Useful for text generation and next-token prediction.
+
+AutoConfig:
+Loads architecture metadata such as hidden size, layers, attention heads, vocab size, and labels.
+
+Production learning:
+Choosing the correct AutoModel class is important because each class attaches a different task-specific head.
+Wrong class selection can produce wrong outputs, shape errors, or an unsuitable model for the task.
+
+AutoModel classes practical completed successfully.
+Output saved to: outputs\automodel_classes_and_heads_output.txt

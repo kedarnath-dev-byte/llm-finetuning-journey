@@ -1,0 +1,70 @@
+================================================================================
+Hugging Face Tokenization Basics
+================================================================================
+
+Loading tokenizer for model: bert-base-uncased
+
+Original sentence:
+Hello, Hugging Face! I am learning LLM fine-tuning.
+
+Step 1: Tokens
+['hello', ',', 'hugging', 'face', '!', 'i', 'am', 'learning', 'll', '##m', 'fine', '-', 'tuning', '.']
+
+Step 2: Token IDs
+[7592, 1010, 17662, 2227, 999, 1045, 2572, 4083, 2222, 2213, 2986, 1011, 17372, 1012]
+
+Step 3: Full encoded output
+{'input_ids': tensor([[  101,  7592,  1010, 17662,  2227,   999,  1045,  2572,  4083,  2222,
+          2213,  2986,  1011, 17372,  1012,   102]]), 'token_type_ids': tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]), 'attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]])}
+
+Input IDs:
+tensor([[  101,  7592,  1010, 17662,  2227,   999,  1045,  2572,  4083,  2222,
+          2213,  2986,  1011, 17372,  1012,   102]])
+
+Token Type IDs:
+tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]])
+
+Attention Mask:
+tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]])
+
+Decoded text from input IDs:
+[CLS] hello, hugging face! i am learning llm fine - tuning. [SEP]
+
+--------------------------------------------------------------------------------
+Padding and Truncation Example
+--------------------------------------------------------------------------------
+
+Long sentence:
+Hugging Face tokenization is important because transformer models do not understand raw text directly. They understand numerical token IDs created by a tokenizer.
+
+Encoded with padding='max_length', truncation=True, max_length=20:
+{'input_ids': tensor([[  101, 17662,  2227, 19204,  3989,  2003,  2590,  2138, 10938,  2121,
+          4275,  2079,  2025,  3305,  6315,  3793,  3495,  1012,  2027,   102]]), 'token_type_ids': tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]), 'attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]])}
+
+Decoded padded/truncated input:
+[CLS] hugging face tokenization is important because transformer models do not understand raw text directly. they [SEP]
+
+--------------------------------------------------------------------------------
+Batch Tokenization Example
+--------------------------------------------------------------------------------
+
+Batch sentences:
+1. I love learning Hugging Face.
+2. Tokenization converts text into model-readable numbers.
+3. Fine-tuning adapts a pretrained model to a specific task.
+
+Batch input_ids shape:
+torch.Size([3, 17])
+
+Batch attention_mask shape:
+torch.Size([3, 17])
+
+First batch input IDs:
+tensor([  101,  1045,  2293,  4083, 17662,  2227,  1012,   102,     0,     0,
+            0,     0,     0,     0,     0,     0,     0])
+
+First batch decoded text:
+[CLS] i love learning hugging face. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Tokenization basics completed successfully.
+Output saved to: outputs\tokenization_basics_output.txt

@@ -1,0 +1,59 @@
+================================================================================
+Hugging Face Dataset Loading and Preprocessing
+================================================================================
+
+Loading IMDb dataset from Hugging Face Hub...
+
+Dataset object:
+DatasetDict({
+    train: Dataset({
+        features: ['text', 'label'],
+        num_rows: 25000
+    })
+    test: Dataset({
+        features: ['text', 'label'],
+        num_rows: 25000
+    })
+    unsupervised: Dataset({
+        features: ['text', 'label'],
+        num_rows: 50000
+    })
+})
+
+Available splits:
+dict_keys(['train', 'test', 'unsupervised'])
+
+Train split details:
+Number of rows: 25000
+Column names: ['text', 'label']
+Features: {'text': Value('string'), 'label': ClassLabel(names=['neg', 'pos'])}
+
+First training example preview:
+Label: 0
+Text preview: I rented I AM CURIOUS-YELLOW from my video store because of all the controversy that surrounded it when it was first released in 1967. I also heard that at first it was seized by U.S. customs if it ever tried to enter this country, therefore being a fan of films considered "controversial" I really h...
+
+Creating reproducible shuffled dataset using seed=42...
+
+Selecting a CPU-friendly subset of 100 samples...
+Subset rows: 100
+
+Filtering reviews with text length less than 500 characters...
+Short reviews found in subset: 9
+
+Filtering positive reviews with text length less than 700 characters...
+Positive short reviews found: 14
+
+Adding word_count column using map()...
+
+Updated columns after map():
+['text', 'label', 'word_count']
+
+First 5 word counts:
+Row 0: label=1, word_count=125, text_preview=There is no relation at all between Fortier and Profiler but the fact that both ...
+Row 1: label=1, word_count=131, text_preview=This movie is a great. The plot is very true to the book which is a classic writ...
+Row 2: label=0, word_count=177, text_preview=George P. Cosmatos' "Rambo: First Blood Part II" is pure wish-fulfillment. The U...
+Row 3: label=1, word_count=119, text_preview=In the process of trying to establish the audiences' empathy with Jake Roedel (T...
+Row 4: label=0, word_count=636, text_preview=Yeh, I know -- you're quivering with excitement. Well, *The Secret Lives of Dent...
+
+Dataset preprocessing completed successfully.
+Output saved to: outputs\dataset_loading_preprocessing_output.txt

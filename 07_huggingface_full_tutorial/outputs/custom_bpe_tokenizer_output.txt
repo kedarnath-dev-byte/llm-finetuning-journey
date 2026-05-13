@@ -1,0 +1,62 @@
+================================================================================
+Custom BPE Tokenizer Training
+================================================================================
+
+Training corpus size:
+11
+
+Sample corpus lines:
+1. Hugging Face helps developers build and share machine learning models.
+2. Fine tuning adapts a pretrained model to a specific downstream task.
+3. Tokenization converts human language into model readable numbers.
+
+Training BPE tokenizer...
+
+Saving raw tokenizer JSON...
+Saved raw tokenizer file: outputs\custom_bpe_tokenizer\custom_tokenizer.json
+
+Loading tokenizer back as PreTrainedTokenizerFast...
+
+Saving Hugging Face fast tokenizer folder...
+Saved fast tokenizer folder: outputs\custom_bpe_tokenizer\hf_fast_tokenizer
+
+Testing custom tokenizer:
+
+Original sentence:
+Fine tuning helps adapt models for education AI.
+Tokens:
+['Fin', 'e', 'tu', 'ning', 'help', 's', 'ad', 'a', 'p', 't', 'model', 's', 'f', 'or', 'ed', 'uc', 'ation', 'AI', '.']
+Input IDs:
+[83, 21, 80, 103, 82, 34, 70, 17, 31, 35, 68, 34, 22, 65, 73, 111, 67, 57, 6]
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+Decoded text:
+Fin e tu ning help s ad a p t model s f or ed uc ation AI .
+
+Original sentence:
+Agriculture assistants can answer crop questions.
+Tokens:
+['A', 'g', 'ri', 'cu', 'l', 'tu', 're', 'assi', 'st', 'ants', 'can', 'ans', 'w', 'er', 'c', 'r', 'o', 'p', 'qu', 'est', 'ion', 's', '.']
+Input IDs:
+[7, 23, 59, 90, 27, 80, 43, 81, 46, 116, 62, 115, 38, 48, 19, 33, 30, 31, 66, 93, 49, 34, 6]
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+Decoded text:
+A g ri cu l tu re assi st ants can ans w er c r o p qu est ion s .
+
+Original sentence:
+UnknownNewDomainWord should be handled by subword tokenization.
+Tokens:
+['[UNK]', 'n', 'k', 'n', 'o', 'w', 'n', '[UNK]', 'e', 'w', '[UNK]', 'o', 'm', 'ain', '[UNK]', 'or', 'd', 's', 'h', 'o', 'u', 'l', 'd', 'b', 'e', 'h', 'and', 'l', 'ed', 'b', 'y', 'su', 'b', 'wor', 'd', 'to', 'ken', 'iz', 'ation', '.']
+Input IDs:
+[0, 29, 26, 29, 30, 38, 29, 0, 21, 38, 0, 30, 28, 86, 0, 65, 20, 34, 24, 30, 36, 27, 20, 18, 21, 24, 55, 27, 73, 18, 40, 105, 18, 113, 20, 50, 75, 97, 67, 6]
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+Decoded text:
+[UNK] n k n o w n [UNK] e w [UNK] o m ain [UNK] or d s h o u l d b e h and l ed b y su b wor d to ken iz ation .
+
+Tokenizer vocabulary size:
+120
+
+Custom BPE tokenizer training completed successfully.
+Output saved to: outputs\custom_bpe_tokenizer_output.txt
