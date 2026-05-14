@@ -1,0 +1,40 @@
+
+BERT IMDb Fine-Tuning Experiment Results
+=======================================
+
+Platform:
+Google Colab GPU
+
+GPU:
+Tesla T4
+
+Model:
+bert-base-uncased
+
+Task:
+IMDb binary sentiment classification
+
+Dataset Sample:
+Train rows: 1000
+Test rows: 500
+
+Training Results:
+Global step: 125
+Training loss: 0.510933609008789
+Training metrics: {'train_runtime': 62.8441, 'train_samples_per_second': 15.912, 'train_steps_per_second': 1.989, 'total_flos': 131555527680000.0, 'train_loss': 0.510933609008789, 'epoch': 1.0}
+
+Evaluation Results:
+{'eval_loss': 0.3375180661678314, 'eval_runtime': 10.1518, 'eval_samples_per_second': 49.252, 'eval_steps_per_second': 6.206, 'epoch': 1.0}
+
+Inference Results:
+Review: This movie was amazing and I loved the acting.
+Prediction: LABEL_1 = Positive, score around 0.77
+
+Review: The film was boring, slow, and badly written.
+Prediction: LABEL_0 = Negative, score around 0.86
+
+Review: The story was okay, but the acting was excellent.
+Prediction: LABEL_1 = Positive, score around 0.62
+
+Memory Line:
+BERT is not generative. BERT understands text using encoder representations, and the classification head converts that understanding into positive/negative sentiment.
