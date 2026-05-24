@@ -5,6 +5,10 @@
 
 This repository documents my complete learning journey in LLM Fine-Tuning from fundamentals to advanced GenAI systems.
 
+## Portfolio Role
+
+This repository is maintained by Mamani Kedarnath as a structured GenAI learning portfolio. It is designed to show interview-ready understanding of fine-tuning, RAG, agents, Hugging Face workflows, evaluation, and business use cases.
+
 The goal is to learn, practice, document, and build proof for high-paying AI/ML/GenAI roles by covering:
 
 - Model training
